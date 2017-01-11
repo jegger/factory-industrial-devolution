@@ -1,0 +1,31 @@
+{
+    "cols": 8,
+    "tiles" : (
+        "",
+        "",
+        "",
+        "TubeEndBottom",
+        "",
+        "",
+        "",
+        "",
+
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "Processor",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": "",
+
+        "16": "ConvCCEndLeft",
+        "17": "ConvCC",
+        "18": "ConvCC",
+        "19": "ProcessorBottom",
+        "20": "ConvCC",
+        "21": "ConvCCBoxRight",
+        "22": "SwtichTop",
+        "23": "ConvCCEndRight"
+        )
+}

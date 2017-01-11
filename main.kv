@@ -1,0 +1,90 @@
+<MainLayout>:
+    tile_layout: tile_layout
+    tile_size: 40, 40
+    cols: 8
+    speed: 0.125
+    GridLayout:
+        id: tile_layout
+
+
+
+## CONVAIORS
+<ConvCC>:
+    source: 'images/conv/cc.zip'
+    stencil_size: 40,30
+    stencil_pos: 0, 10
+
+<ConvCCEndLeft>:
+    source: 'images/conv/cc_end_left.zip'
+
+<ConvCCEndRight@Tile>:
+    source: 'images/conv/cc_end_right.zip'
+
+<ConvCCBoxLeft>:
+    source: 'images/conv/cc_box_left.zip'
+    stencil_pos: 5, 10
+    stencil_size: 35,19
+
+<ConvCCBoxRight>:
+    source: 'images/conv/cc_box_right.zip'
+    stencil_pos: 0, 10
+    stencil_size: 35,19
+
+## TUBES
+<TubeEndBottom>:
+    source: 'images/tubes/end_bottom.png'
+
+<TubeCreator>:
+    size: root.size
+    pos: root.pos
+    source: 'images/tubes/creator.png'
+
+
+## PROCESSOR
+<Processor@Tile>:
+    source: 'images/processor/processor.zip'
+
+<ProcessorBottom@Tile>
+    state: 'normal'
+    source: 'images/processor/cc_bottom.zip' if root.state=='normal' else 'images/processor/cc_bottom_active.zip'
+
+
+## SWITCHES
+<SwitchTop>:
+
+
+## PRODUCTS
+<Product>:
+    size: 19, 19
+    source: 'images/item.png'
+
+
+## OTHER
+<Empty@Tile>:
+    source: 'images/empty.png'
+
+
+<Tile>:
+    name: "None"
+    stencil_layer: stencil_layer
+    AnimatedImage:
+        pos: root.pos
+        size: root.size
+        source: root.source
+    StencilView:
+        id: stencil_layer
+        x: root.x+root.stencil_pos[0]
+        y: root.y+root.stencil_pos[1]
+        width: root.width/40*root.stencil_size[0]
+        height: root.height/40*root.stencil_size[1]
+    Button:
+        size: root.size
+        pos: root.pos
+        border: 0,0,0,0
+        background_color: 1,1,1,0.0
+
+
+<AnimatedImage@Image>:
+    allow_stretch: True
+    keep_ratio: False
+    anim_delay: 0.08
